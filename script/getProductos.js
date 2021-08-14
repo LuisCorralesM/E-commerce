@@ -2,7 +2,8 @@ export {getProductos}
 
 const templatedCard = document.querySelector('.templated-card').content
 const fragment = document.createDocumentFragment()
-const card = document.querySelector('#card')
+const cardMujeres = document.querySelector('#cardMujeres')
+const cardHombres = document.querySelector('#cardHombres')
 
 const getProductos = async ()=>{
     try {
@@ -15,16 +16,38 @@ const getProductos = async ()=>{
 }
 
 const pintarCards = (data)=>{
-    data.forEach(foto => {
-        if(foto.albumId <= 2){
-            console.log(foto.albumId)
+            if(cardMujeres){
+                data.forEach(foto => {
+                    if(foto.albumId == 1){
+                        console.log('seccion mujeres');
+                        console.log(foto.albumId)
+    
+                        const {url, title, albumId, id} = foto
+                        templatedCard.querySelector('img').setAttribute('src', url)
+                        templatedCard.querySelector('h5').textContent = title
+                        const clone = templatedCard.cloneNode(true)
+                        fragment.append(clone)       
+                    }
+                });
+                cardMujeres.append(fragment)
+            } 
 
-            const {url, title, albumId, id} = foto
-            templatedCard.querySelector('img').setAttribute('src', url)
-            templatedCard.querySelector('h5').textContent = title
-            const clone = templatedCard.cloneNode(true)
-            fragment.append(clone)    
-        }
-    });
-    card.append(fragment)
+            if(cardHombres){
+                data.forEach(foto => {
+                    if(foto.albumId == 2){
+                        console.log('seccion hombres');
+                        console.log(foto.albumId)
+    
+                        const {url, title, albumId, id} = foto
+                        templatedCard.querySelector('img').setAttribute('src', url)
+                        templatedCard.querySelector('h5').textContent = title
+                        const clone = templatedCard.cloneNode(true)
+                        fragment.append(clone)       
+                    }
+                });
+                cardHombres.append(fragment)
+            } 
+
+                    
+
 }
