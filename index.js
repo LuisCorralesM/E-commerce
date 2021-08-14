@@ -1,6 +1,6 @@
-import {getData} from './script/getData.js'
+import {getProductos} from './script/getProductos.js'
 
 document.addEventListener('DOMContentLoaded', ()=>{
-    getData()
+    getProductos()
 })
 
