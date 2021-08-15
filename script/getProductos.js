@@ -19,12 +19,14 @@ const pintarCards = (data)=>{
             if(cardMujeres){
                 data.forEach(foto => {
                     if(foto.albumId == 1){
-                        console.log('seccion mujeres');
-                        console.log(foto.albumId)
+                        // console.log('seccion mujeres');
+                        // console.log(foto.albumId)
     
-                        const {url, title, albumId, id} = foto
+                        const {url, title, id} = foto
+                        templatedCard.querySelector('#carrito').dataset.id = id
                         templatedCard.querySelector('img').setAttribute('src', url)
                         templatedCard.querySelector('h5').textContent = title
+                        templatedCard.querySelector('p').textContent = `$${(Math.round(Math.random()*150000))}`
                         const clone = templatedCard.cloneNode(true)
                         fragment.append(clone)       
                     }
@@ -35,19 +37,18 @@ const pintarCards = (data)=>{
             if(cardHombres){
                 data.forEach(foto => {
                     if(foto.albumId == 2){
-                        console.log('seccion hombres');
-                        console.log(foto.albumId)
+                        // console.log('seccion hombres');
+                        // console.log(foto.albumId)
     
-                        const {url, title, albumId, id} = foto
+                        const {url, title, id} = foto
+                        templatedCard.querySelector('#carrito').dataset.id = id
                         templatedCard.querySelector('img').setAttribute('src', url)
                         templatedCard.querySelector('h5').textContent = title
+                        templatedCard.querySelector('p').textContent = `$${(Math.round(Math.random()*150000))}`
                         const clone = templatedCard.cloneNode(true)
                         fragment.append(clone)       
                     }
                 });
                 cardHombres.append(fragment)
             } 
-
-                    
-
 }

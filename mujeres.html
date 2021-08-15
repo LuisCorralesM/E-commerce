@@ -24,7 +24,7 @@
                 </form>
               </div>
               <a href="carrito.html">
-                <i class="fas fa-cart-plus fs-3"></i>
+                <i class="fas fa-cart-plus fs-3"></i><span>0</span>
               </a>
             </div>
         </nav>
@@ -38,13 +38,13 @@
     <div class="container py-4 px-8">
         <div class="row" id="cardMujeres">
             <template class="templated-card">
-                <div class="col col-sm-6 col-md-4 mb-4" >
+                <div class="col col-sm-6 col-md-4 mb-4">
                     <div class="card p-2" style="width: 18rem;">
                         <img src="..." class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Descripción del producto</p>
-                            <a href="#" class="btn btn-primary">Agregar al carrito</a>
+                            <p class="card-text">Precio</p>
+                            <i class="fas fa-cart-plus fs-3"  class="primary" id="carrito"></i>
                         </div>
                     </div>        
                 </div>
@@ -64,6 +64,8 @@
 
     <script src="index.js" type="module"></script>
     <script src="script/getProductos.js" type="module"></script>
+    <script src="script/detProd.js" type="module"></script>
+
     <!-- cdn bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
