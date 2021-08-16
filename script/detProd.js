@@ -11,21 +11,18 @@ const mostrarDetalleM = e =>{
     const infoCard = e.target.parentElement
     // console.log(infoCard);
    if(infoCard.classList.contains('card')){
-       console.log('IMG-PRODUCTO');
+    //    console.log('IMG-PRODUCTO');
        const enlace = infoCard.querySelector('img').getAttribute('src')
-       console.log(enlace);
        const titulo = infoCard.querySelector('h5').textContent
-       console.log(titulo);
        const precio = infoCard.querySelector('p').textContent
-       console.log(precio);
-       const dataId = infoCard.querySelector('#carrito').dataset.id
+       const dataId = infoCard.querySelector('#icono-carrito').dataset.id
 
        cardMujeres.remove()
 
        templatedCard.querySelector('img').setAttribute('src', enlace)
        templatedCard.querySelector('h5').textContent = titulo
        templatedCard.querySelector('p').textContent = precio
-       templatedCard.querySelector('#carrito').dataset.id = dataId
+       templatedCard.querySelector('#icono-carrito').dataset.id = dataId
        const clone = templatedCard.cloneNode(true)
        fragment.append(clone)       
 
@@ -38,21 +35,18 @@ const mostrarDetalleH = e =>{
 const infoCard = e.target.parentElement
 // console.log(infoCard);
 if(infoCard.classList.contains('card')){
-   console.log('yes');
+// console.log('IMG-PRODUCTO');
    const enlace = infoCard.querySelector('img').getAttribute('src')
-   console.log(enlace);
    const titulo = infoCard.querySelector('h5').textContent
-   console.log(titulo);
    const precio = infoCard.querySelector('p').textContent
-   console.log(precio);
-   const dataId = infoCard.querySelector('#carrito').dataset.id
+   const dataId = infoCard.querySelector('#btn-carrito').dataset.id
 
    cardHombres.remove()
 
    templatedCard.querySelector('img').setAttribute('src', enlace)
    templatedCard.querySelector('h5').textContent = titulo
    templatedCard.querySelector('p').textContent = precio
-   templatedCard.querySelector('#carrito').dataset.id = dataId
+   templatedCard.querySelector('#btn-carrito').dataset.id = dataId
    const clone = templatedCard.cloneNode(true)
    fragment.append(clone)       
 

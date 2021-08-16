@@ -23,10 +23,10 @@ const pintarCards = (data)=>{
                         // console.log(foto.albumId)
     
                         const {url, title, id} = foto
-                        templatedCard.querySelector('#carrito').dataset.id = id
+                        templatedCard.querySelector('#btn-carrito').dataset.id = id
                         templatedCard.querySelector('img').setAttribute('src', url)
                         templatedCard.querySelector('h5').textContent = title
-                        templatedCard.querySelector('p').textContent = `$${(Math.round(Math.random()*150000))}`
+                        templatedCard.querySelector('p').textContent = `${(Math.round(Math.random()*150000))}`
                         const clone = templatedCard.cloneNode(true)
                         fragment.append(clone)       
                     }
@@ -41,10 +41,10 @@ const pintarCards = (data)=>{
                         // console.log(foto.albumId)
     
                         const {url, title, id} = foto
-                        templatedCard.querySelector('#carrito').dataset.id = id
+                        templatedCard.querySelector('#btn-carrito').dataset.id = id
                         templatedCard.querySelector('img').setAttribute('src', url)
                         templatedCard.querySelector('h5').textContent = title
-                        templatedCard.querySelector('p').textContent = `$${(Math.round(Math.random()*150000))}`
+                        templatedCard.querySelector('p').textContent = `${(Math.round(Math.random()*150000))}`
                         const clone = templatedCard.cloneNode(true)
                         fragment.append(clone)       
                     }
