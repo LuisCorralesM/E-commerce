@@ -1,15 +1,20 @@
-export {addAlCarrito}
+export {addAlCarrito, carrito, pintarCarrito}
 
 const items = document.querySelector('#items')
 const footer = document.querySelector('#footer')
-const cards = document.querySelector('#cards')
 const templateCarrito = document.getElementById('template-carrito').content
 const templateFooter = document.getElementById('template-footer').content
-const templateCard = document.getElementById('template-card').content
 const fragment = document.createDocumentFragment()
 const iconoCarrito = document.querySelector('.icono-carrito span')
 
 let carrito = {}
+
+document.addEventListener('DOMContentLoaded', e =>{
+    if(localStorage.getItem('carrito')){
+        carrito = JSON.parse(localStorage.getItem('carrito'))
+        pintarCarrito()
+    }
+})
 
 const addAlCarrito = e =>{
     const infoCard = e.target.parentElement
@@ -37,8 +42,8 @@ const addAlCarrito = e =>{
 
 }
 
-const pintarCarrito = ()=>{
-    console.log(carrito);
+const pintarCarrito = (carritoLocal)=>{
+    // console.log(carrito);
     items.innerHTML = ''
     Object.values(carrito).forEach(producto =>{
         templateCarrito.querySelector('th').textContent = producto.id
@@ -53,7 +58,21 @@ const pintarCarrito = ()=>{
     })
     items.append(fragment)
 
+    const btnSumaResta = document.querySelectorAll('.btn-sm')
+    btnSumaResta.forEach(btn =>{
+        btn.addEventListener('click', e => {
+            if(e.target.matches('.sumar')){
+                btnSumar(e)
+            }
+            if(e.target.matches('.restar')){
+                btnRestar(e)
+            }
+        })
+    })
+
     pintarFooter()
+
+    localStorage.setItem('carrito', JSON.stringify(carrito))
 }
 
 const pintarFooter = ()=>{
@@ -83,4 +102,19 @@ const pintarFooter = ()=>{
         pintarCarrito()
     })
 
+}
+
+const 
+btnSumar = (e)=>{
+    const producto = carrito[e.target.dataset.id]
+    producto.cantidad++
+    pintarCarrito()
+},
+btnRestar = (e)=>{
+    const producto = carrito[e.target.dataset.id]
+    producto.cantidad--
+    if(producto.cantidad === 0){
+        delete carrito[e.target.dataset.id]
+    }
+    pintarCarrito()
 }
