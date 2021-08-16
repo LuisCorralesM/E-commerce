@@ -42,7 +42,7 @@ const addAlCarrito = e =>{
 
 }
 
-const pintarCarrito = (carritoLocal)=>{
+const pintarCarrito = ()=>{
     // console.log(carrito);
     items.innerHTML = ''
     Object.values(carrito).forEach(producto =>{
@@ -100,6 +100,11 @@ const pintarFooter = ()=>{
     btnVaciar.addEventListener('click', ()=>{
         carrito = {}
         pintarCarrito()
+    })
+
+    const btnPagar = document.querySelector('#finalizar-compra')
+    btnPagar.addEventListener('click', e =>{
+        open('pagar.html')
     })
 
 }

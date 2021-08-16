@@ -25,84 +25,87 @@
                   <button class="btn btn-outline-success" type="submit">Search</button>
                 </form>
               </div>
-              <p>Mujeres</p>
               <i class="fas fa-cart-plus fs-3 icono-carrito"  class="primary"><span></span></i>
             </div>
         </nav>
     </header>
 
-    <main>     
-        
+    <main>
         <!-- Carrito -->
         <div class="displayNone" id="contenedor-carrito">
             <h4>Carrito de compras
             </h4>
             <table class="table">
-            <thead>
+                <thead>
                 <tr>
-                <th scope="col">#</th>
-                <th scope="col">Item</th>
-                <th scope="col">Cantidad</th>
-                <th scope="col">Acción</th>
-                <th scope="col">Total</th>
+                    <th scope="col">#</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Acción</th>
+                    <th scope="col">Total</th>
                 </tr>
-            </thead>
-            <!-- por aqui insertamos el template con los productos agregados al carrito -->
-            <tbody id="items"></tbody>
-            <tfoot>
+                </thead>
+                <!-- por aqui insertamos el template con los productos agregados al carrito -->
+                <tbody id="items"></tbody>
+                <tfoot>
                 <!-- por aqui insertamos el template con los totales -->
                 <tr id="footer">
-                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
+                    <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
                 </tr>
-            </tfoot>
+                </tfoot>
             </table>
 
         </div>
-
+        
         <section>
-            <!-- Productos -->
-            <div class="container py-4 px-8">
-                <div class="row" id="cardMujeres">
-                    <template class="templated-card">
-                        <div class="col col-sm-6 col-md-4 mb-4">
-                            <div class="card p-2" style="width: 18rem;">
-                                <img src="..." class="card-img-top" alt="...">
-                                <div class="card-body">
-                                    <h5 class="card-title">Card title</h5>
-                                    <p class="card-text">Precio</p>
-                                    <i class="fas fa-cart-plus fs-3"  class="primary" id="btn-carrito"></i>
-                                </div>
-                            </div>        
+            <div class="contenedor-formulario">
+                <form class="row g-3">
+                    <h1>Informacion de Pago</h1>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nombre" placeholder="Nombre completo" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="Correo electrónico" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="nTargeta" placeholder="No. Tarjeta" required>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Fecha de vencimiento MM/AA" required>
                         </div>
-                    </template>
-                </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="CVV" required>
+                        </div>
+                    </div>
+                    <div class="centrar-btn">
+                        <button type="submit" class="btn btn-info">PAGAR</button>
+                    </div> 
+                </form>
             </div>
-        </section>  
+        </section>
 
     </main>
-
-  
-
-    <!-- templates -->
+       <!-- templates -->
 
     <!-- carrito -->
     <template id="template-carrito">
-        <tr>
-        <th scope="row">id</th>
-        <td>Café</td>
-        <td>1</td>
-        <td>
-            <button class="btn btn-info btn-sm sumar">
-             +
-            </button>
-            <button class="btn btn-danger btn-sm restar">
-                -
-            </button>
-        </td>
-        <td>$ <span>500</span></td>
-        </tr>
+      <tr>
+      <th scope="row">id</th>
+      <td>Café</td>
+      <td>1</td>
+      <td>
+          <button class="btn btn-info btn-sm sumar">
+           +
+          </button>
+          <button class="btn btn-danger btn-sm restar">
+              -
+          </button>
+      </td>
+      <td>$ <span>500</span></td>
+      </tr>
     </template>
-    
+  
     <!-- footer -->
     <template id="template-footer">
         <th scope="row" colspan="2">Total productos</th>
@@ -112,15 +115,13 @@
                 vaciar todo
             </button>
             <button class="btn btn-info btn-sm" id="finalizar-compra">
-                Finalizar compras
-            </button>  
+              Finalizar compras
+            </button>
         </td>
         <td class="font-weight-bold">$ <span>5000</span></td>
     </template>
-    
 
-
-   <footer class="bg-dark" style="text-align:center; font-family: 'Bubblegum Sans', cursive;  font-size: 20px; color: aliceblue; align-items: center;">
+    <footer class="bg-dark" style="text-align:center; font-family: 'Bubblegum Sans', cursive;  font-size: 20px; color: aliceblue; align-items: center;">
       <a href="index.html"><img src="imagenes/logo.png" id="logo" alt="Logo"  height="50"></a>
       <br>
       <br>
@@ -131,8 +132,6 @@
     </footer>
 
     <script src="index.js" type="module"></script>
-    <script src="script/getProductos.js" type="module"></script>
-    <script src="script/detProd.js" type="module"></script>
     <script src="script/addCarrito.js" type="module"></script>
     <script src="script/displayCarrito.js" type="module"></script>
 

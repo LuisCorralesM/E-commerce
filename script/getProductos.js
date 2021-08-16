@@ -1,9 +1,5 @@
 export {getProductos} 
 
-const templatedCard = document.querySelector('.templated-card').content
-const fragment = document.createDocumentFragment()
-const cardMujeres = document.querySelector('#cardMujeres')
-const cardHombres = document.querySelector('#cardHombres')
 
 const getProductos = async ()=>{
     try {
@@ -16,6 +12,11 @@ const getProductos = async ()=>{
 }
 
 const pintarCards = (data)=>{
+    const templatedCard = document.querySelector('.templated-card').content
+    const fragment = document.createDocumentFragment()
+    const cardMujeres = document.querySelector('#cardMujeres')
+    const cardHombres = document.querySelector('#cardHombres')
+
             if(cardMujeres){
                 data.forEach(foto => {
                     if(foto.albumId == 1){
