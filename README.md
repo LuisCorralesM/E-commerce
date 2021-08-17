@@ -12,7 +12,7 @@
 * Pasarela de pago
 
 ## Recursos Técnicos
-* Almacenamiento de datos en el **Local-Storege**
+* Almacenamiento de datos en el **Local-Storage**
 * Consumo de APIs
 * Manejo de promesas
 
